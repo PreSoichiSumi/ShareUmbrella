@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 must come first-->
+
+<meta name="description" content="A web site to share umbrellas">
+<meta name="author" content="Cloud Spiral Team-C6">
+<link rel="icon" href="../../favicon.ico">
+
+<title>ShareUmbrella</title>
+
+<!-- Bootstrap cores -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="css/theme.css" rel="stylesheet">
+
+<style type="text/css">
+.navbar-brand {
+	background: url("image/shareUmbrella.png") no-repeat left center;
+	background-size: contain;
+	height: 50px;
+	width: 250px;
+}
+</style>
+</head>
+
+<body role="document">
+
+	<!-- Fixed navbar -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html"></a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<span id="rental">
+					<ul class="nav navbar-nav">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="search.html">Search</a></li>
+					</ul>
+				</span> <span id="aboutUser">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="login.html">Login</a></li>
+						<li><a href="signup.html">SignUp</a></li>
+					</ul>
+				</span>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</nav>
+	<!--以下本文-->
+	<div class="container theme-showcase" role="main">
+		<div class="jumbotron">
+			<h1>Share Umbrella Top Page</h1>
+			<br>
+			<h2>We hope all of you enjoy sharing umbrella!</h2>
+		</div>
+		<table class="table table-bordered table-hover">
+			<tr>
+				<td align="center"><a href="search.html"> <img
+						class="center-block img-responsive" style="display: inline-block;"
+						src="image/sagasu.png">
+				</a></td>
+
+			</tr>
+			<tr>
+
+
+				<td align="center"><a href="rental.html"> <img
+						class="center-block img-responsive" style="display: inline-block;"
+						src="image/kariru.png">
+				</a></td>
+
+
+
+		</table>
+	</div>
+	<!-- Bootstrap core JavaScript -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/bootstrap/bootstrap.min.js"></script>
+	<script src="js/jquery-2.1.4.js"></script>
+	<script type="text/javascript" src="js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="js/jquery.serialize.js"></script>
+	<script type='text/javascript' src="js/header.js"></script>
+	<script type='text/javascript'>
+		$(function() {
+			initHeader();
+		});
+	</script>
+</body>
+</html>

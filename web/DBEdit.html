@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<script src="js/jquery-2.1.4.js"></script>
+		<script src="js/DBEdit.js"></script>
+	</head>
+	<body>
+		<input type="button" value="初期化ボタン" onclick="initDB();"/><br/>
+		<hr>
+		Account<br>
+		<div id="account">
+			<p>
+
+			</p>
+		</div>
+		<p><label>ユーザ名：
+			<input type="text" id="userId" size="16" maxlength="64"></label>
+			<label>パスワード：
+			<input type="text" id="pass" size="16" maxlength="64"></label>
+			<label>所持ポイント：
+			<input type="text" id="point" size="16" maxlength="64"></label>
+		</p>
+		<input type="button" value="Accountコレクションに追加" onclick="addAccount();"/><br/>
+		<hr>
+		Umbrella
+		<div id="umbrella">
+			<p>
+
+			</p>
+		</div>
+		<p><label>傘ID：
+			<input type="text" id="umbId" size="16" maxlength="64"></label>
+			<label>状態(blank or reserved)：
+			<input type="text" id="status" size="16" maxlength="64"></label>
+			<label>所有者(blank or ユーザ名)：
+			<input type="text" id="owner" size="16" maxlength="64"></label>
+			<label>傘の種類(normal or premium)：
+			<input type="text" id="type" size="16" maxlength="64"></label>
+			<label>建物ID：
+			<input type="text" id="buildId" size="16" maxlength="64"></label>
+		</p>
+		<input type="button" value="Umbrellaコレクションに追加" onclick="addUmbrella();"/><br/>
+		<hr>
+		Building
+		<div id="building">
+			<p>
+
+			</p>
+		</div>
+		<p><label>建物ID：
+			<input type="text" id="buildId_building" size="16" maxlength="64"></label>
+			<label>建物名：
+			<input type="text" id="name" size="16" maxlength="64"></label>
+			<label>経度：
+			<input type="text" id="longitude" size="16" maxlength="64"></label>
+			<label>緯度：
+			<input type="text" id="latitude" size="16" maxlength="64"></label>
+			<label>傘の本数：
+			<input type="text" id="count" size="16" maxlength="64"></label>
+		</p>
+		<input type="button" value="Buildingコレクションに追加" onclick="addBuilding();"/><br/>
+		<hr>
+		<input type="button" onclick="location.href='index.html'" value="TOPへ"/>
+	</body>
+</html>
