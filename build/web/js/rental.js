@@ -126,6 +126,7 @@ function shot() {
 						// 結果を表示
 						var message = $('rentUmbrealla',xml).text();
 						$('div#result>p').text(message);
+						console.log("rental->"+result);
 						stopTimer();
 					}
 				});

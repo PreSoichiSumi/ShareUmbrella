@@ -10,7 +10,11 @@ var rntl= 	'<ul class="nav navbar-nav">'+
 					'<li><a href="rootSearch.html">RootNavigation</a></li>'+
 				'</ul></li>'+
 			'</ul>';
-var loggedIn	='<ul class="nav navbar-nav navbar-right">'+
+var loggedIn	='<ul class="nav navbar-nav">'+
+				 '<li><a href="rental.html">Rental</a></li>'+
+				 '<li><a href="return.html">Return</a></li>'+
+				 '</ul>'+
+				 '<ul class="nav navbar-nav navbar-right">'+
 				 '<li><a href="mypage.html">MyPage</a></li>'+
 				 '<li><a href="index.html" onClick="logout();">Logout</a></li>'+
 				 '</ul>';

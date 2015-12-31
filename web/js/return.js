@@ -142,6 +142,7 @@ function shot() {
 						// 結果を表示
 						var message = $('returnUmbrella',xml).text();
 						$('div#result>p').text(message);
+						console.log("return成功->"+result);
 						stopTimer();
 					}
 				});

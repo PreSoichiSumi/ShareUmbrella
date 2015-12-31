@@ -400,7 +400,7 @@ public class JaxAdapter {
 	@GET
 	@Path("/addBuilding")
 	public Response addBuilding(
-			@QueryParam("buildId") int buildId,
+			@QueryParam("buildId_building") int buildId,
 			@QueryParam("name") String name,
 			@QueryParam("longitude") double longitude,
 			@QueryParam("latitude") double latitude,
