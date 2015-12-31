@@ -264,6 +264,7 @@ public class JaxAdapter {
 
 	/**
 	 * 退会する
+	 * @author s-sumi
 	 * @param userId
 	 */
 	@POST

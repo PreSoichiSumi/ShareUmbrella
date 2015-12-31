@@ -1,10 +1,6 @@
-      var apiKey="AIzaSyCptf9xX97FROBMciKq3ChVJO4ZngEF_HQ";
-
       var directions = new google.maps.DirectionsService();
       var renderer = new google.maps.DirectionsRenderer();
       var map, transitLayer;
-	 // var autocomplete;
-	 // var autocomplete2;
 
       var nearBuildLonDep;
       var nearBuildLatDep;
@@ -27,11 +23,7 @@
         route);
 
         var input = document.getElementById('from');
-        //autocomplete = new google.maps.places.Autocomplete(input);
-        //autocomplete.bindTo('bounds', map);
         var input2=document.getElementById('to');
-        //autocomplete2=new google.maps.places.Autocomplete(input2);
-        //autocomplete2.bindTo('bounds',map);
 
         transitLayer = new google.maps.TransitLayer();
 
@@ -72,8 +64,6 @@
 		  	//次に最寄かさ置き場検索
 			  var service=new google.maps.places.PlacesService(
 			  			document.getElementById('from').appendChild(document.createElement('div')));
-			 // var request= new google.maps.places.PlaceDetailsRequest;
-			  //request.placeId=placeid;
 			  var request={"placeId":PlaceId};
 			  service.getDetails(request,function(results,status){
 			  	nearBuildLonDep=results.geometry.location.lng();
@@ -93,14 +83,10 @@
 			     });
 			  });
 		  });
-	      //var placeid=autocomplete.getPlace().place_id;
 
 
 		  //目的地 まずオートコンプリート
 
-		//	url: "https://maps.googleapis.com/maps/api/place/autocomplete/json?input="+dest+"&key="+apiKey,
-			//var placeid=jsonData.predictions[0].place_id;
-			//placeid=autocomplete2.getPlace().place_id;
 			var completeService=new google.maps.places.AutocompleteService();
 		    completeService.getQueryPredictions({input:dest},function(predictions,status){
 			  	if(status!=google.maps.places.PlacesServiceStatus.OK){
@@ -111,8 +97,6 @@
 
 				var service2=new google.maps.places.PlacesService(
 				document.getElementById('to').appendChild(document.createElement('div')));
-				//var request2= new google.maps.places.PlaceDetailsRequest;
-				//request2.placeId=placeid;
 				var request2={"placeId":PlaceId2};
 				service2.getDetails(request2,function(results,status){
 					nearBuildLonDest=results.geometry.location.lng();
