@@ -1,6 +1,7 @@
 # ShareUmbrella
-傘をシェアするためのwebサービスです．
-サービス概要は[こちら](images/ShareUmbrellaPoster.png)
+傘をシェアするためのwebサービスです．<br>
+リンクは[こちら](http://urx.blue/qbh3)<br>
+サービス概要は[こちら](images/ShareUmbrellaPoster.png)<br>
 
 ## 使い方
 1. トップページへアクセス
@@ -19,13 +20,13 @@
 
 ## 実装
 **クライアント**
-言語：JavaScript，HTML
-使用ライブラリ：Bootstrap，QRコードライブラリ，GoogleMapsAPI，GooglePlacesAPI
+言語：JavaScript，HTML<br>
+使用ライブラリ：Bootstrap，QRコードライブラリ，GoogleMapsAPI，GooglePlacesAPI<br>
 
 **サーバサイドアプリケーション**
-言語：Java
-使用フレームワーク：Jersey
+言語：Java<br>
+使用フレームワーク：Jersey<br>
 
 **その他**
-サーバ：Tomcat
-DBMS：MongoDB
+サーバ：Tomcat<br>
+DBMS：MongoDB<br>
