@@ -19,14 +19,14 @@
 * サニタイズ
 
 ## 実装
-**クライアント**
+**クライアント**<br>
 言語：JavaScript，HTML<br>
 使用ライブラリ：Bootstrap，QRコードライブラリ，GoogleMapsAPI，GooglePlacesAPI<br>
 
-**サーバサイドアプリケーション**
+**サーバサイドアプリケーション**<br>
 言語：Java<br>
 使用フレームワーク：Jersey<br>
 
-**その他**
+**その他**<br>
 サーバ：Tomcat<br>
 DBMS：MongoDB<br>
