@@ -1,5 +1,5 @@
 # ShareUmbrella
-傘をシェアするためのwebサービスです．スマートフォンでの利用を想定しています．<br>
+傘をシェアするためのwebサービスです．<br>
 リンクは[こちら](http://urx.blue/qbh3)<br>
 サービス概要は[こちら](images/ShareUmbrellaPoster.png)<br>
 
