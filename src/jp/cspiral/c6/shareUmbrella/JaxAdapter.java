@@ -315,7 +315,6 @@ public class JaxAdapter {
 			sessionObject.setPoint(0);
 
 		} else {
-
 			sessionObject.setUserId(session.getAttribute("userId").toString());
 			sessionObject.setPass(session.getAttribute("pass").toString());
 			sessionObject.setPoint(Integer.valueOf(session.getAttribute("point").toString()));

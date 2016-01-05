@@ -30,20 +30,12 @@ public class AccountModel {
 
 	/**
 	 * アカウントの新規登録処理を行う
-	 *
 	 * @param userId
 	 * @param pass
 	 * @param point - 初期ポイント
 	 * @return
 	 */
 	public String registerAccount(String userId, String pass, int point) {
-		/*
-		 * Account account = new Account();
-		 *
-		 * account.setUserId(userId); account.setPass(pass);
-		 * account.setPoint(100);
-		 */
-
 		try {
 			if (isUniqueName(userId) == true) {
 				DBObject obj = new BasicDBObject();
@@ -71,8 +63,7 @@ public class AccountModel {
 	 * ユーザ名の重複チェック db.account.findOne({ "userId" : userId
 	 * })の結果を利用して，存在するかしないかをチェックする
 	 *
-	 * @param userId
-	 *            ユーザ名
+	 * @param userId ユーザ名
 	 * @return 与えられた userId が既に登録されていれば false，存在していなければ true．
 	 */
 	private boolean isUniqueName(String userId) throws Exception {
@@ -91,12 +82,9 @@ public class AccountModel {
 	}
 
 	/**
-	 * アカウント認証処理.
-	 *
-	 * @param userId
-	 *            ユーザ名
-	 * @param pass
-	 *            パスワード
+	 * アカウント認証処理
+	 * @param userId ユーザ名
+	 * @param pass   パスワード
 	 * @return アカウント情報
 	 * @throws TEMFatalException
 	 *             MongoExceptionが発生した場合．
@@ -105,8 +93,6 @@ public class AccountModel {
 	 */
 	public Account authenticate(String userId, String pass)
 			throws Exception {
-		// logger.info("AccountModel.authenticate");
-
 		// DB問い合わせ用のDBオブジェクトを作る
 		DBObject query = new BasicDBObject();
 		query.put("userId", userId);
@@ -123,15 +109,6 @@ public class AccountModel {
 				// logger.warning(msg);
 				throw new Exception(msg);
 			}
-			/*
-			Account account = new Account();
-//			DBUtils.attachProperties(account, o);
-			// ごり押しポイント
-			account.setUserId(o.get("userId").toString());
-			account.setPoint(Integer.parseInt(o.get("point").toString()));
-			account.setSessionId("hogehoge");
-			account.setPass(o.get("userId").toString());
-			*/
 
 			return DBUtils.convertDBObjectToAccountObject(o);
 		} catch (MongoException e) {
