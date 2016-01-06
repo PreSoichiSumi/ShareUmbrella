@@ -33,30 +33,4 @@
 サーバ：Tomcat<br>
 DBMS：MongoDB<br>
 
-## DBの構成
-### accountコレクション
-| Key        | 型           |
-| ------------- |:-------------:|
-| userId| String |
-| pass  | String      | 
-| point | Integer      |
-| sessionId | String      |
-
-###umbrellaコレクション
-| Key        | 型           |
-| ------------- |:-------------:|
-| umbId| Integer |
-| status  | String      | 
-| owner | String      |
-| type | String      |
-| buildId | String      |
-| time | Date      |
-
-###buildingコレクション
-| Key        | 型           |
-| ------------- |:-------------:|
-| buildId| String |
-| name  | String      | 
-| longitude | String      |
-| latitude | String      |
-| count | Integer     |
+DBの仕様は[Wiki](https://github.com/SoichiSumi/ShareUmbrella/wiki)へ
