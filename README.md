@@ -1,6 +1,8 @@
 # ShareUmbrella
 傘をシェアするためのwebサービスです．<br>
 リンクは[こちら](http://urx.blue/qbh3)<br>
+
+https://server-1479597618.ap-northeast-1.elb.amazonaws.com/shareUmbrella/web/index.html
 サービス概要は[こちら](images/ShareUmbrellaPoster.png)<br>
 
 ## 使い方
