@@ -42,7 +42,6 @@ public class AlpacaController {
 
 	/**
 	 * 傘を返す．<br>
-	 *
 	 * @author n-yuuta
 	 * @param umbId 傘ID
 	 * @return message 結果
@@ -72,20 +71,6 @@ public class AlpacaController {
 		return building;
 	}
 
-//	/**
-//	 * 施設をさがす．<br>
-//	 *
-//	 * @author kkz
-//	 * @param
-//	 * @return building 結果
-//	 */
-//	public ArrayList<Building> searchBuildings(double longitude, double latitude) {
-//
-//		//施設をさがす
-//		BuildingModel buildingModel = new BuildingModel();
-//		return buildingModel.searchMany(longitude, latitude);
-//	}
-
 	/**
 	 * 施設をさがす．<br>
 	 *
@@ -109,17 +94,13 @@ public class AlpacaController {
 	 * @exception
 	 */
 	public Account login(String userId, String pass) {
-		// TODO:validate
 		userId = DBUtils.sanitize(userId);
 		pass = DBUtils.sanitize(pass);
-
 		try {
 			AccountModel accountModel = new AccountModel();
 			Account account = accountModel.authenticate(userId, pass);
-			//TODO:セッション登録
 			return account;
 		}catch(Exception e) {
-			// 意味ない
 			e.printStackTrace();
 		}
 		return null;
@@ -132,7 +113,6 @@ public class AlpacaController {
 	 * @return JSONObject
 	 */
 	public JSONObject getUserInfo(String userId){
-		//DBUtils.initDB();
 		AccountModel aModel=new AccountModel();
 		DBObject userData=aModel.getUserData(userId);
 		UmbrellaModel uModel=new UmbrellaModel();

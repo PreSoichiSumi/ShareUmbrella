@@ -61,7 +61,6 @@ public class BuildingModel {
 
 	/**
 	 * 施設が保有する傘の本数を1本増やす．<br>
-	 *
 	 * @author n-yuuta
 	 * @param buildId 施設ID
 	 */
@@ -153,16 +152,12 @@ public class BuildingModel {
 			}
 		}
 
-		//距離によりソートしたほうがいい？
-
-
 		return buildingList;
 
 	}
 
 	/**
 	 * 最寄りの施設をさがす．<br>
-	 *
 	 * @author n-yuuta<br>
 	 * @param lan 経度<br>
 	 * @param lon 緯度<br>

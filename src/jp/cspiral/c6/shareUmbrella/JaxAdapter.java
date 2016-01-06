@@ -110,10 +110,8 @@ public class JaxAdapter {
 
 	/**
 	 * 施設をさがす．<br>
-	 *
 	 * @author n-yuuta
 	 * @param
-	 *
 	 */
 	@GET
 	@Produces({MediaType.APPLICATION_XML})
@@ -125,7 +123,6 @@ public class JaxAdapter {
 		//指定されたリクエストに対するセッションを取得．存在しなければnull
 		final HttpSession session = servletRequest.getSession(false);
 		if (session == null) {
-
 			return Response.status(200).entity("<message>ログインしてください．</message>").build();
 		}
 
@@ -195,7 +192,6 @@ public class JaxAdapter {
 		//指定されたリクエストに対するセッションを取得．存在しなければnull
 		final HttpSession session = servletRequest.getSession(false);
 		if (session != null) {
-
 			//セッションを破棄
 			session.invalidate();
 			return Response.status(200).entity("<logout>ログアウトしました．</logout>").build();
