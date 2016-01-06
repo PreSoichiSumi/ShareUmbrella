@@ -1,7 +1,7 @@
 # ShareUmbrella
 傘をシェアするためのwebサービスです．<br>
 リンクは[こちら](https://server-1479597618.ap-northeast-1.elb.amazonaws.com/shareUmbrella/web/index.html)<br>
-(2015/12からhttpでウェブカメラを使用できなくなってしまったため，自己署名証明書を使ってhttps接続するよう設定しています．<br>
+[2015/12からhttpでウェブカメラを使用できなくなってしまったため(chromeの場合)，自己署名証明書を使ってhttps接続するよう設定しています]<br>
 正式に発行されている証明書では無いため警告が出ますが，利用する場合はそのまま接続してください．)<br>
 サービス概要は[こちら](images/ShareUmbrellaPoster.png)<br>
 
