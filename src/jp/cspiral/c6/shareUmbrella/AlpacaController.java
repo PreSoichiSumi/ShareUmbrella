@@ -152,10 +152,10 @@ public class AlpacaController {
 	 * ポイントをチャージする
 	 * @author s-sumi
 	 * @param o
-	 * @return 実行結果のを示す文字列
+	 * @return 実行結果を示す文字列
 	 */
 	public String charge(String userId,int money){
-		//本当はここでクレジットカードの精算処理が入る
+		//実際はここにクレジットカードの精算処理が入る
 		AccountModel aModel= new AccountModel();
 		DBObject userData=aModel.getUserData(userId);
 		userData.put("point",
@@ -184,7 +184,6 @@ public class AlpacaController {
 	 * @return 成功したかどうかのメッセージ
 	 */
 	public String register(String userId , String pass){
-
 		//入力の書式が正しいかチェック
 		String userId2 = DBUtils.sanitize(userId);
 		String pass2 = DBUtils.sanitize(pass);
@@ -194,8 +193,6 @@ public class AlpacaController {
 		if(userId.length() < 4 || userId.length() > 12 || pass.length() < 4 || pass.length() > 12){
 			return "LENGTHNG";
 		}
-
-
 		//アカウントをDBに登録する
 		AccountModel account = new AccountModel();
 		String message = account.registerAccount(userId2, pass2, 100);
