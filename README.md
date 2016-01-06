@@ -32,3 +32,5 @@
 **その他**<br>
 サーバ：Tomcat<br>
 DBMS：MongoDB<br>
+
+DBの仕様は[Wiki](https://github.com/SoichiSumi/ShareUmbrella/wiki)へ
