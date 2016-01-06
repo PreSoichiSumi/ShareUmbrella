@@ -34,7 +34,7 @@
 DBMS：MongoDB<br>
 
 ## DBの構成
-accountコレクション
+### accountコレクション
 | Key        | 型           |
 | ------------- |:-------------:|
 | userId| String |
