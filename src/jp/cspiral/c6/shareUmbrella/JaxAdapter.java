@@ -30,8 +30,7 @@ public class JaxAdapter {
 
 	/**
 	 * 傘を返す．<br>
-	 *
-	 * @author n-yuuta
+	 * @author n-yuuta,s-sumi
 	 * @param umbId 傘のID
 	 *
 	 */
@@ -46,11 +45,12 @@ public class JaxAdapter {
 		//指定されたリクエストに対するセッションを取得．存在しなければnull
 		final HttpSession session = servletRequest.getSession(false);
 		if (session == null) {
-
 			return Response.status(200).entity("<returnUmbrella>ログインしてください．</returnUmbrella>").build();
 		}
 
-		if (!Character.isDigit(umbId.charAt(0))) {
+		try{
+			Long.valueOf(umbId);
+		}catch(NumberFormatException e){
 			return Response.status(200).entity("<returnUmbrella>QRコードの読み取りに失敗しました．再度お試しください．</returnUmbrella>").build();
 		}
 
@@ -135,10 +135,8 @@ public class JaxAdapter {
 
 	/**
 	 * 施設をさがす．<br>
-	 *
 	 * @author n-yuuta
 	 * @param
-	 *
 	 */
 	@GET
 	@Produces({MediaType.APPLICATION_XML})
@@ -160,7 +158,6 @@ public class JaxAdapter {
 	/**
 	 * ログインする<br>
 	 * 同時に，セッションを作成．<br>
-	 *
 	 */
 	@POST
 	@Produces({MediaType.APPLICATION_XML})
@@ -188,7 +185,6 @@ public class JaxAdapter {
 	/**
 	 * ログアウトする<br>
 	 * 同時に，セッションを破棄．<br>
-	 *
 	 * @author n-yuuta
 	 */
 	@GET
@@ -221,7 +217,6 @@ public class JaxAdapter {
 		//指定されたリクエストに対するセッションを取得．存在しなければnull
 		final HttpSession session = servletRequest.getSession(false);
 		if (session == null) {
-
 			JSONObject o = new JSONObject();
 			return Response.status(200).entity(o).build();
 		}
@@ -263,7 +258,7 @@ public class JaxAdapter {
 	}
 
 	/**
-	 * 退会する
+	 * 退会し，toppageにリダイレクト
 	 * @author s-sumi
 	 * @param userId
 	 */
@@ -281,16 +276,14 @@ public class JaxAdapter {
 		//指定されたリクエストに対するセッションを取得．存在しなければnull
 		final HttpSession session = servletRequest.getSession(false);
 		if (session == null) {
-			//return Response.status(200).entity("").build();
 			return Response.seeOther(uri).build();
 		}
 
-		String str=controller.leave(session.getAttribute("userId").toString());
+		controller.leave(session.getAttribute("userId").toString());
 
 		//セッションを破棄
 		session.invalidate();
 
-		//	return Response.status(200).entity(str).build();
 		return Response.seeOther(uri).build();
 	}
 
