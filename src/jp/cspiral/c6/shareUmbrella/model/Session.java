@@ -3,6 +3,10 @@ package jp.cspiral.c6.shareUmbrella.model;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * httpsessionのwrapperクラス
+ * @author s-sumi
+ */
 @XmlRootElement(name="session")
 public class Session {
 
