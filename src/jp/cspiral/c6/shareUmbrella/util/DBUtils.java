@@ -203,6 +203,88 @@ public class DBUtils {
 
 		BUILDING_COLLECTION.insert(data);
 
+		data = new BasicDBObject();
+		data.put("buildId",50);
+		data.put("name","大阪大学 中之島センター 事務所");
+		data.put("longitude",135.490469);
+		data.put("latitude",34.692715);
+		data.put("count",6);
+
+		BUILDING_COLLECTION.insert(data);
+
+
+		data = new BasicDBObject();
+		data.put("buildId",51);
+		data.put("name","JR東西線　新福島駅");
+		data.put("longitude",135.485644);
+		data.put("latitude",34.695105);
+		data.put("count",20);
+
+		BUILDING_COLLECTION.insert(data);
+
+		data = new BasicDBObject();
+		data.put("buildId",52);
+		data.put("name","東京駅");
+		data.put("longitude",139.76595282554626);
+		data.put("latitude",35.68140486651128);
+		data.put("count",6);
+
+		BUILDING_COLLECTION.insert(data);
+
+		data = new BasicDBObject();
+		data.put("buildId",53);
+		data.put("name","品川駅");
+		data.put("longitude",139.73885983228683);
+		data.put("latitude",35.62885510928976);
+		data.put("count",3);
+
+		BUILDING_COLLECTION.insert(data);
+
+		data = new BasicDBObject();
+		data.put("buildId",54);
+		data.put("name","両国駅");
+		data.put("longitude",139.79321479797363);
+		data.put("latitude",35.69581339191388);
+		data.put("count",7);
+
+		BUILDING_COLLECTION.insert(data);
+
+		data = new BasicDBObject();
+		data.put("buildId",55);
+		data.put("name","渋谷駅");
+		data.put("longitude",139.70171928405762);
+		data.put("latitude",35.6581679808236);
+		data.put("count",9);
+
+		BUILDING_COLLECTION.insert(data);
+
+		data = new BasicDBObject();
+		data.put("buildId",56);
+		data.put("name","新宿駅");
+		data.put("longitude",139.69957888126373);
+		data.put("latitude",35.69055482137934);
+		data.put("count",20);
+
+		BUILDING_COLLECTION.insert(data);
+
+		data = new BasicDBObject();
+		data.put("buildId",57);
+		data.put("name","池袋駅");
+		data.put("longitude",139.7118043899536);
+		data.put("latitude",35.72986153843338);
+		data.put("count",2);
+
+		BUILDING_COLLECTION.insert(data);
+
+		data = new BasicDBObject();
+		data.put("buildId",58);
+		data.put("name","上野駅");
+		data.put("longitude",139.77598428726196);
+		data.put("latitude",35.71212713081159);
+		data.put("count",1);
+
+		BUILDING_COLLECTION.insert(data);
+
 	}
 
 	public static Account convertDBObjectToAccountObject(DBObject document) {
