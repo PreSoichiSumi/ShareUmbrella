@@ -1,11 +1,15 @@
 package jp.cspiral.c6.shareUmbrella.model;
 
+import java.util.ConcurrentModificationException;
+
 import jp.cspiral.c6.shareUmbrella.util.DBUtils;
+
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import com.mongodb.MongoException;
+import com.mongodb.WriteResult;
 
 public class AccountModel {
 	private final String DB_ACCOUNT_COLLECTION = "account";
@@ -133,8 +137,11 @@ public class AccountModel {
 	 * @param DBObject
 	 * @return none
 	 */
-	public void updateUserData(DBObject userData){
-		coll.save(userData);//戻り値で成功したかどうか判定するとよい．本当は．すみ
+	public void updateUserData(DBObject userData) throws ConcurrentModificationException{
+		WriteResult result= coll.save(userData);
+		if(result.getN()!=1){
+			throw new ConcurrentModificationException("some one have been modified the data before this modification");
+		}
 	}
 	/**
 	 * userIdに対応するuserをaccount tableから削除する
@@ -142,17 +149,18 @@ public class AccountModel {
 	 * @param DBObject
 	 * @return none
 	 */
-	public String deleteUserData(String userId){
+	public String deleteUserData(String userId) throws ConcurrentModificationException{
 		DBObject queryForAccount=new BasicDBObject();
 		queryForAccount.put("userId", userId);
 
 		DBObject account =	coll.findOne(queryForAccount);
-		coll.remove(account);
-
+		WriteResult res= coll.remove(account);
+		if(res.getN()!=1)
+			throw new ConcurrentModificationException();
 		return "succeed";
 	}
 
-	public void decreasePoint(int point,String userId) {
+	public void decreasePoint(int point,String userId) throws ConcurrentModificationException{
 
 		// DB問い合わせ用のDBオブジェクトを作る
 		DBObject accountQuery = new BasicDBObject();
@@ -163,10 +171,13 @@ public class AccountModel {
 
 		DBObject updateQuery = new BasicDBObject();
 		updateQuery.put("point",(userPoint-point));
-		coll.update(accountResult,new BasicDBObject("$set",updateQuery),false,false);
+		WriteResult res=coll.update(accountResult,new BasicDBObject("$set",updateQuery),false,false);
+		if(res.getN()!=1){
+			throw new ConcurrentModificationException();
+		}
 	}
 
-	public void increasePoint(int point,String userId) {
+	public void increasePoint(int point,String userId) throws ConcurrentModificationException{
 
 		// DB問い合わせ用のDBオブジェクトを作る
 		DBObject accountQuery = new BasicDBObject();
@@ -177,7 +188,9 @@ public class AccountModel {
 
 		DBObject updateQuery = new BasicDBObject();
 		updateQuery.put("point",(userPoint+point));
-		coll.update(accountResult,new BasicDBObject("$set",updateQuery),false,false);
+		WriteResult res= coll.update(accountResult,new BasicDBObject("$set",updateQuery),false,false);
+		if(res.getN()!=1)
+			throw new ConcurrentModificationException();
 	}
 
 	public int getUserPoint(String userId) {

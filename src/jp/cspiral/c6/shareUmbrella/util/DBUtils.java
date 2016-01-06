@@ -18,9 +18,6 @@ import com.mongodb.MongoException;
 /**
  * Mongodbのコネクション管理クラス
  * DB接続へのシングルトン管理を行う．
- *
- * @author shin
- *
  */
 public class DBUtils {
 

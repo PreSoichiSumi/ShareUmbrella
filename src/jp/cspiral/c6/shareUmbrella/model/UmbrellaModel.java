@@ -1,6 +1,7 @@
 package jp.cspiral.c6.shareUmbrella.model;
 
 import java.text.SimpleDateFormat;
+import java.util.ConcurrentModificationException;
 import java.util.Date;
 
 import org.codehaus.jettison.json.JSONArray;
@@ -10,6 +11,7 @@ import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
 import com.mongodb.DBObject;
+import com.mongodb.WriteResult;
 
 import exception.NotEnoughPointException;
 import exception.NotFoundUmbrellaException;
@@ -44,7 +46,7 @@ public class UmbrellaModel {
 	 * 傘をレンタルする．<br>
 	 * ポイントが足りない場合，指定の傘が存在しない場合はエラー．<br>
 	 *
-	 * @author n-yuuta
+	 * @author n-yuuta, s-sumi
 	 * @param umbId 傘ID
 	 * @return message 結果メッセージ
 	 * @throws NotEnoughPointException
@@ -86,12 +88,6 @@ public class UmbrellaModel {
 			throw new NotEnoughPointException();
 		}
 
-		//施設IDを取得，施設IDに対応する施設の傘の本数を1本減らす
-		int buildId = Integer.valueOf(umbrellaResult.get("buildId").toString());
-
-		BuildingModel buildingModel = new BuildingModel();
-		buildingModel.decreaseUmbrella(buildId);
-
 		//DB更新
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd/E");
 		DBObject updateQuery = new BasicDBObject();
@@ -99,7 +95,17 @@ public class UmbrellaModel {
 		updateQuery.put("owner",userId);
 		updateQuery.put("buildId","blank");
 		updateQuery.put("time",sdf.format(new Date()));
-		coll.update(umbrellaResult,new BasicDBObject("$set",updateQuery),false,false);
+		WriteResult res=coll.update(umbrellaResult,new BasicDBObject("$set",updateQuery),false,false);
+
+		//メソッド実行中に他のユーザに借りられた場合
+		if(res.getN()!=1)
+			throw new ConcurrentModificationException("Some one heve been rent this umbrella");
+
+		//施設IDを取得，施設IDに対応する施設の傘の本数を1本減らす
+		int buildId = Integer.valueOf(umbrellaResult.get("buildId").toString());
+
+		BuildingModel buildingModel = new BuildingModel();
+		buildingModel.decreaseUmbrella(buildId);
 
 		//ポイント数を消費
 		accountModel.decreasePoint(umbrellaPoint,userId);
@@ -112,7 +118,7 @@ public class UmbrellaModel {
 	 * 傘を借りていない場合はエラー．<br>
 	 * 所有者とリクエスト要求者が異なる場合はエラー<br>
 	 *
-	 * @author n-yuuta
+	 * @author n-yuuta, s-sumi
 	 * @param umbId 傘ID
 	 * @return message 結果メッセージ
 	 * @throws NotEnoughPointException
@@ -149,9 +155,6 @@ public class UmbrellaModel {
 		BuildingModel buildingModel = new BuildingModel();
 		Building building = buildingModel.getNearestBuilding(longitude,latitude);
 
-		//傘の本数を1本増やす
-		buildingModel.increaseUmbrella(building.getBuildId());
-
 		//DB更新
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd/E");
 		DBObject updateQuery = new BasicDBObject();
@@ -161,6 +164,9 @@ public class UmbrellaModel {
 		updateQuery.put("time",sdf.format(new Date()));
 		coll.update(umbrellaResult,new BasicDBObject("$set",updateQuery),false,false);
 
+		//傘の本数を1本増やす
+		buildingModel.increaseUmbrella(building.getBuildId());
+
 		//ポイントを還元
 		accountModel.increasePoint(100,userId);
 
@@ -169,6 +175,7 @@ public class UmbrellaModel {
 
 	/**
 	 * userIdが所持する傘のリストをjsonarrayで取得する．
+	 * @author s-sumi
 	 * @param userId
 	 * @return
 	 */
