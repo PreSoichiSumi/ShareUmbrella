@@ -389,13 +389,13 @@ public class JaxAdapter {
 	@GET
 	@Path("/addBuilding")
 	public Response addBuilding(
-			@QueryParam("buildId_building") String buildId,
+			@QueryParam("buildId_building") int buildId,
 			@QueryParam("name") String name,
 			@QueryParam("longitude") double longitude,
 			@QueryParam("latitude") double latitude,
 			@QueryParam("count") int count) {
 
-		DBUtils.addBuilding(Integer.valueOf(buildId),name,longitude,latitude,count);
+		DBUtils.addBuilding(buildId,name,longitude,latitude,count);
 
 		return Response.status(200).entity("ok").build();
 	}
