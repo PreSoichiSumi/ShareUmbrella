@@ -13,7 +13,7 @@
 5. ShareUmbrellaの借りるページを開いて，傘についているQRコードを読み取ると傘を借りることができます
 6. 傘を利用し終わったら近くの傘置き場まで行き，傘に付いているQRコードを読み取ると傘を返すことができます．
 
-動作確認用QRコードは[こちら](https://github.com/SoichiSumi/Ingredients/blob/master/qr50.gif)<br>
+動作確認用QRコード: [free](https://github.com/SoichiSumi/Ingredients/blob/master/qr50.gif)，[premium](https://github.com/SoichiSumi/Ingredients/blob/master/QR60Premium.gif)<br>
 レンタル/返却　に成功しましたと出るまで，QRコードをかざし続けてください．<br>
 
 ## 工夫点
