@@ -18,12 +18,12 @@
 
 ## 工夫点
 * シンプルなUI
-* 傘を借りて，返すことまでを考慮したルートナビゲーション(GoogleMaps,GooglePlacesを利用)
 * 傘置き場検索の際には入力文字列から探したい場所を推測(GooglePlacesを利用)
 * なるべくMVCモデルに従った実装
 * セッション管理
 * サニタイズ
-
+* 傘を借りて，返すことまでを考慮したルートナビゲーション(GoogleMaps,GooglePlacesを利用)
+* 
 ## 実装
 **クライアント**<br>
 言語：JavaScript，HTML<br>
