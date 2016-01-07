@@ -22,15 +22,29 @@ $(window).load(function() {
 			myPageUmbList=data.umbIdList;
 			$('#USERID').text(myPageUserId);
 			$('#UMBPOINT').text(myPageUmbPoint);
-			var umbListStr="<span id=\"UMBLIST\"><ul>";
+			//var umbListStr="<span id=\"UMBLIST\"><ul>";
+			//for(var i in myPageUmbList){
+			//	umbListStr+=("<li>Id= "+myPageUmbList[i]+" </li>");
+			//	anyUmbrella=true;
+			//}
+			//umbListStr+="</ul></span>";
+			//if(anyUmbrella){
+			//	$('#UMBLIST').html(umbListStr);
+			//}
+			var umbListStr="<span id=\"UMBLIST\">";
 			for(var i in myPageUmbList){
-				umbListStr+=("<li>Id= "+myPageUmbList[i]+" </li>");
+				if(myPageUmbList[i]==10 || myPageUmbList[i]==50)
+					umbListStr+=("<img src=\"image/freeUmbrella.png\" width=\"100\" height=\"100\" style=\"filter: progid:DXImageTransform.Microsoft.alpha (style=0, opacity=100)\"><br>");
+				else{
+					umbListStr+=("<img src=\"image/premiumUmbrella.png\" width=\"100\" height=\"100\" style=\"filter: progid:DXImageTransform.Microsoft.alpha (style=0, opacity=100)\"><br>");
+				}
 				anyUmbrella=true;
 			}
-			umbListStr+="</ul></span>";
+			umbListStr+="</span>";
 			if(anyUmbrella){
 				$('#UMBLIST').html(umbListStr);
 			}
+
 		},
 		error: function(XMLHttpRequest, textStatus, errorThrown){
 			console.log('erroraaaaa');
