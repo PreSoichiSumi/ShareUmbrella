@@ -3,7 +3,7 @@
 リンクは[こちら](https://server-1479597618.ap-northeast-1.elb.amazonaws.com/shareUmbrella/web/index.html)<br>
 [2015/12からhttpでウェブカメラを使用できなくなってしまったため(chromeの場合)，<br>自己署名証明書を使ってhttps接続するよう設定しています<br>
 正式に発行されている証明書では無いため警告が出ますが，利用する場合はそのまま接続してください．]<br><br>
-サービス概要は[こちら](images/ShareUmbrellaPoster.png)<br>
+概要はこちら [ビジネス概要](images/ShareUmbrellaPoster1.png)　[webアプリ概要](images/ShareUmbrellaPoster2.png)<br>
 
 ## 使い方
 1. トップページへアクセス
@@ -13,7 +13,7 @@
 5. ShareUmbrellaの借りるページを開いて，傘についているQRコードを読み取ると傘を借りることができます
 6. 傘を利用し終わったら近くの傘置き場まで行き，傘に付いているQRコードを読み取ると傘を返すことができます．
 
-動作確認用QRコードは[こちら](https://github.com/SoichiSumi/Ingredients/blob/master/qr50.gif)<br>
+動作確認用QRコード: [free](https://github.com/SoichiSumi/Ingredients/blob/master/qr50.gif)，[premium](https://github.com/SoichiSumi/Ingredients/blob/master/QR60Premium.gif)<br>
 レンタル/返却　に成功しましたと出るまで，QRコードをかざし続けてください．<br>
 
 ## 工夫点
