@@ -156,6 +156,23 @@ public class DBUtils {
 		data.put("time","1018");
 
 		UMBRELLA_COLLECTION.insert(data);
+		
+		data.put("umbId",50);
+		data.put("status","blank");
+		data.put("owner","blank");
+		data.put("type","normal");
+		data.put("buildId",52);
+		data.put("time","1018");
+
+		UMBRELLA_COLLECTION.insert(data);
+		data.put("umbId",60);
+		data.put("status","blank");
+		data.put("owner","blank");
+		data.put("type","premium");
+		data.put("buildId",52);
+		data.put("time","1018");
+
+		UMBRELLA_COLLECTION.insert(data);
 	}
 
 	private static void initBuildingDB() {
