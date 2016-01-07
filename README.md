@@ -23,7 +23,7 @@
 * セッション管理
 * サニタイズ
 * 傘を借りて，返すことまでを考慮したルートナビゲーション(GoogleMaps,GooglePlacesを利用)
-* 
+
 ## 実装
 **クライアント**<br>
 言語：JavaScript，HTML<br>
