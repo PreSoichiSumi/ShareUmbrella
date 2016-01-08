@@ -1,4 +1,4 @@
-# ShareUmbrella
+# ShareUmbrella <img src="https://travis-ci.org/SoichiSumi/ShareUmbrella.svg?branch=master">
 傘をシェアするためのwebサービスです．<br><br>
 リンクは[こちら](https://server-1479597618.ap-northeast-1.elb.amazonaws.com/shareUmbrella/web/index.html)<br>
 [2015/12からhttpでウェブカメラを使用できなくなってしまったため(chromeの場合)，<br>自己署名証明書を使ってhttps接続するよう設定しています<br>
