@@ -1,4 +1,5 @@
-.git
-bin
-shareUmbrella.war
+﻿shareUmbrella.war
+/bin
+/build/WEB_INF/classes
 
+*.class
