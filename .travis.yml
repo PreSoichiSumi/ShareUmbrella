@@ -22,4 +22,4 @@ deploy:
   on: *2
 before_deploy:
 - mkdir -p dpl_cd_upload
-- mv AKIAJ3JYNSGLSW72LENQ dpl_cd_upload/AKIAJ3JYNSGLSW72LENQ
+- mv shareUmbrella.war dpl_cd_upload/shareUmbrella.war
