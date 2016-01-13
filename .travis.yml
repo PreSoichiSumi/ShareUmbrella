@@ -8,6 +8,7 @@ deploy:
     secure: U37/EGGnaampRUYFJCDmtRmrF4olzCVQO8g5mIiddExxL/KgCntozoAfQCKyuKWGafzuHyxrYFeeHMxc4g7Pna2pbBwgWxGdDxv95zMaDdUKmjQOXHGXMveN1qogys+daM0FRvFIXmFfl215+NuXyjsFP6dVGm2Yu/U8jJEWaToQBARXIAsHLPJHetvLZKsn1U3PIJUrH2dWMXXN25n1/jBcbtLLAusgGJ9RhXAGXsaIPEBGUzmO6HDJdw30knWudW7p/bIi5esfbxKr3voPKXVhrb/qzep3tHahDzvet7Fw1soha5Cv7aMuUmPPnaa7O9rtQ+y++QTbV3SEMibMPoVZR+YXhsWmOJ9n9yQNKLZUCEvQJ5IXVZ3kK7oIoG0R6BucOeP98o8yCuq7ILoAF+olKs8E/xe/1Ek0vjnKKSGFgJiJNvOy+ml6rod3EXHcLTUYUyO0ZS1wMW0ySMHZv4jPbalvjKnIGMdavisxjpWvlmBU3+tAQ9nA3xKCv3MMa6eKqErIwEEUlLP/0UZyzkmY4ZwWh8RcDTvyvY7SKLuA+WRypqbKAAWwOTdm5DkiNe4H/by3DQs20jJebG7jvmaGQf+/irL92sSiarqFNXqLsm2OtvT7PByjE7ACdcM5R2vzVwdeqwv2B+ypXSpmHa3YdygwQ/ujFVGxJ/QMEqM=
   local_dir: dpl_cd_upload
   skip_cleanup: true
+  region: ap-northeast-1
   on: &2
     repo: SoichiSumi/ShareUmbrella
   bucket: shareumbrella
