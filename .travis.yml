@@ -8,6 +8,7 @@ deploy:
     secure: vPbSuQxctBxpgPYTmzDu5EYFXS5TMc/Ud+1XJOzKnJIaofZ3xFRsuj/04tBjx8mEqAXud9wTkI6SJukkulGvJdvoQDKXX2lR3T562rAmpxUAVTNPCuq3b8x6PNMKqsezZQwUas4atnDRDZnMw0cAfwV3X4Jvno06grGwjVvCbR+xacfFyVzYNLQkZq+bYiWcNCQ3pt93xRfA12sVS5zWXXR5VtKsIY5OK5FH+5hlZdggrXet29Y+Fk6L//7O8XkAa5fpfAk/tu/YFHphq+Xn1rk1lw/UydvvBM+JqIsEq+w7Q+ZKHfAco83Xg6502HTAbPo7TubnLF1cHxxcptGFKvAYdlFb0phKuNIrKPaS0UbnnudgajkoQB6Btes/GtalhXNeHOz7XclLrCXUOVn2jNLCDNZXrOntwd5UShYi3Lwnk+zK7UjMoXGBb3WJt6RDeJMHWPCCqB9DnEDj8LiViysd5xz3gGs7iYnvvOhv1FWk/X6z9v/y8yYp7SdQkVptyvAAldJvlpLloylhoK2zZz7wPgJiExwmirl597/y9Gl79rGQ37hwmSqfAriUCBSX9kRnp4VeYZAPlsGgFXHtxCI0lVL6LDighG/OnXEDoAB4F2uMgc4rZD6LzwZUPw7GeGMbIfUs+LL7LBTnJSbhSP8rVZQe9ernaHREOmvQvT0=
   local_dir: dpl_cd_upload
   skip_cleanup: true
+  region: ap-northeast-1
   on: &2
     repo: SoichiSumi/ShareUmbrella
   bucket: shareumbrella
