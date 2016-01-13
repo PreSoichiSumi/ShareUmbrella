@@ -20,6 +20,3 @@ deploy:
   application: ShareUmbrella
   deployment_group: shareumbrella-deploymentgroup
   on: *2
-before_deploy:
-- mkdir -p dpl_cd_upload
-- mv shareUmbrella.war dpl_cd_upload/shareUmbrella.war
