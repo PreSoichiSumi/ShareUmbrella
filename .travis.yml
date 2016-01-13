@@ -16,7 +16,8 @@ deploy:
   access_key_id: AKIAID2JJWWUKSFS4YHA
   secret_access_key: *1
   bucket: shareumbrella
-  key: AKIAJ3JYNSGLSW72LENQ
+  key: $DEPLOY_ACCESS_KEY
+  secret_access_key: $DEPLOY_ASECRET_KEY 
   bundle_type: github
   application: ShareUmbrella
   deployment_group: shareumbrella-deploymentgroup
