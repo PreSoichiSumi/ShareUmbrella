@@ -5,23 +5,21 @@ deploy:
 - provider: s3
   access_key_id: AKIAID2JJWWUKSFS4YHA
   secret_access_key: &1
-    secure: U37/EGGnaampRUYFJCDmtRmrF4olzCVQO8g5mIiddExxL/KgCntozoAfQCKyuKWGafzuHyxrYFeeHMxc4g7Pna2pbBwgWxGdDxv95zMaDdUKmjQOXHGXMveN1qogys+daM0FRvFIXmFfl215+NuXyjsFP6dVGm2Yu/U8jJEWaToQBARXIAsHLPJHetvLZKsn1U3PIJUrH2dWMXXN25n1/jBcbtLLAusgGJ9RhXAGXsaIPEBGUzmO6HDJdw30knWudW7p/bIi5esfbxKr3voPKXVhrb/qzep3tHahDzvet7Fw1soha5Cv7aMuUmPPnaa7O9rtQ+y++QTbV3SEMibMPoVZR+YXhsWmOJ9n9yQNKLZUCEvQJ5IXVZ3kK7oIoG0R6BucOeP98o8yCuq7ILoAF+olKs8E/xe/1Ek0vjnKKSGFgJiJNvOy+ml6rod3EXHcLTUYUyO0ZS1wMW0ySMHZv4jPbalvjKnIGMdavisxjpWvlmBU3+tAQ9nA3xKCv3MMa6eKqErIwEEUlLP/0UZyzkmY4ZwWh8RcDTvyvY7SKLuA+WRypqbKAAWwOTdm5DkiNe4H/by3DQs20jJebG7jvmaGQf+/irL92sSiarqFNXqLsm2OtvT7PByjE7ACdcM5R2vzVwdeqwv2B+ypXSpmHa3YdygwQ/ujFVGxJ/QMEqM=
+    secure: vPbSuQxctBxpgPYTmzDu5EYFXS5TMc/Ud+1XJOzKnJIaofZ3xFRsuj/04tBjx8mEqAXud9wTkI6SJukkulGvJdvoQDKXX2lR3T562rAmpxUAVTNPCuq3b8x6PNMKqsezZQwUas4atnDRDZnMw0cAfwV3X4Jvno06grGwjVvCbR+xacfFyVzYNLQkZq+bYiWcNCQ3pt93xRfA12sVS5zWXXR5VtKsIY5OK5FH+5hlZdggrXet29Y+Fk6L//7O8XkAa5fpfAk/tu/YFHphq+Xn1rk1lw/UydvvBM+JqIsEq+w7Q+ZKHfAco83Xg6502HTAbPo7TubnLF1cHxxcptGFKvAYdlFb0phKuNIrKPaS0UbnnudgajkoQB6Btes/GtalhXNeHOz7XclLrCXUOVn2jNLCDNZXrOntwd5UShYi3Lwnk+zK7UjMoXGBb3WJt6RDeJMHWPCCqB9DnEDj8LiViysd5xz3gGs7iYnvvOhv1FWk/X6z9v/y8yYp7SdQkVptyvAAldJvlpLloylhoK2zZz7wPgJiExwmirl597/y9Gl79rGQ37hwmSqfAriUCBSX9kRnp4VeYZAPlsGgFXHtxCI0lVL6LDighG/OnXEDoAB4F2uMgc4rZD6LzwZUPw7GeGMbIfUs+LL7LBTnJSbhSP8rVZQe9ernaHREOmvQvT0=
   local_dir: dpl_cd_upload
   skip_cleanup: true
-  region: ap-northeast-1
   on: &2
     repo: SoichiSumi/ShareUmbrella
   bucket: shareumbrella
-  upload_dir: forupload
 - provider: codedeploy
   access_key_id: AKIAID2JJWWUKSFS4YHA
   secret_access_key: *1
   bucket: shareumbrella
-  key: forupload/shareUmbrella.war
+  key: AKIAJ3JYNSGLSW72LENQ
   bundle_type: github
   application: ShareUmbrella
   deployment_group: shareumbrella-deploymentgroup
   on: *2
 before_deploy:
 - mkdir -p dpl_cd_upload
-- mv shareUmbrella.war dpl_cd_upload/shareUmbrella.war
+- mv AKIAJ3JYNSGLSW72LENQ dpl_cd_upload/AKIAJ3JYNSGLSW72LENQ
