@@ -1,7 +1,7 @@
 language: java
 jdk: oraclejdk7
 script: ant generate.service
-before_deploy: ls -al &&  mkdir -p dpl_cd_upload && mv shareUmbrella.war dpl_cd_upload/shareUmbrella.war
+after_success: ls -al &&  mkdir -p dpl_cd_upload && mv shareUmbrella.war dpl_cd_upload/shareUmbrella.war
 deploy:
 - provider: s3
   access_key_id: $AWS_ACCESS_KEY 
