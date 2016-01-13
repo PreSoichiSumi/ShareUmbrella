@@ -1,8 +1,9 @@
 # ShareUmbrella <img src="https://travis-ci.org/SoichiSumi/ShareUmbrella.svg?branch=master">
 傘をシェアするためのwebサービスです．<br><br>
 リンクは[こちら](https://server-1479597618.ap-northeast-1.elb.amazonaws.com/shareUmbrella/web/index.html)<br>
-[2015/12からhttpでウェブカメラを使用できなくなってしまったため(chromeの場合)，<br>自己署名証明書を使ってhttps接続するよう設定しています<br>
-正式に発行されている証明書では無いため警告が出ますが，利用する場合はそのまま接続してください．]<br><br>
+[<S>2015/12からhttpでウェブカメラを使用できなくなってしまったため(chromeの場合)，<br>自己署名証明書を使ってhttps接続するよう設定しています<br>
+正式に発行されている証明書では無いため警告が出ますが，利用する場合はそのまま接続してください．</S>]<br>
+<b>Let's encryptを使って正式な証明書を導入しました．</B><br><br>
 概要はこちら [ビジネス概要](images/ShareUmbrellaPoster1.png)　[webアプリ概要](images/ShareUmbrellaPoster2.png)<br>
 
 ## 使い方
@@ -17,6 +18,7 @@
 レンタル/返却　に成功しましたと出るまで，QRコードをかざし続けてください．<br>
 
 ## 工夫点
+* <b>Travisを用いた自動ビルド・デプロイ</b>
 * シンプルなUI
 * 傘置き場検索の際には入力文字列から探したい場所を推測(GooglePlacesを利用)
 * なるべくMVCモデルに従った実装
