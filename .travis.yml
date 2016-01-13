@@ -1,24 +1,18 @@
 language: java
 jdk: oraclejdk7
+before_install: 
+  - sudo yum install sshpass --enablerepo=epel
+  - eval `ssh-agent -s`
+  - chmod 600 ~/.ssh/config
+  - openssl aes-256-cbc -K $encrypted_6aecf171dcc3_key -iv $encrypted_6aecf171dcc3_iv -in data.pem.enc -out data.pem -d
+  - cp data.pem ~/.ssh/
+  - chmod 600 ~/.ssh/data.pem
+  - ssh-add ~/.ssh/data.pem
+  - ls -al
+  - scp shareUmbrella.war ec2-user@ec2-54-238-225-208.ap-northeast-1.compute.amazonaws.com:/home/ec2-user
+  - sshpass -p shareumbrella ssh -i data.pem root@ec2-54-238-225-208.ap-northeast-1.compute.amazonaws.com
+  - cd /home/ec2-user
+  - rm -rd /var/lib/tomcat7/shareUmbrella
+  - mv shareUmbrella.war /var/lib/tomcat7/webapps/
+  - service tomcat7 restart
 script: ant generate.service
-after_success: ls -al &&  mkdir -p dpl_cd_upload && mv shareUmbrella.war dpl_cd_upload/shareUmbrella.war
-deploy:
-- provider: s3
-  access_key_id: $AWS_ACCESS_KEY 
-  secret_access_key: $AWS_SECRET_KEY
-  local_dir: dpl_cd_upload
-  skip_cleanup: true
-  region: ap-northeast-1
-  on: &2
-    repo: SoichiSumi/ShareUmbrella
-  bucket: shareumbrella
-- provider: codedeploy
-  access_key_id: AKIAID2JJWWUKSFS4YHA
-  secret_access_key: *1
-  bucket: shareumbrella
-  key: $DEPLOY_ACCESS_KEY
-  secret_access_key: $DEPLOY_SECRET_KEY
-  bundle_type: github
-  application: ShareUmbrella
-  deployment_group: shareumbrella-deploymentgroup
-  on: *2
