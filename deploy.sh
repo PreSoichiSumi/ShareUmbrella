@@ -7,7 +7,7 @@ ls -al
 sudo chmod 400 data.pem
 sudo scp -Bv -i data.pem shareUmbrella.war ec2-user@ec2-54-238-225-208.ap-northeast-1.compute.amazonaws.com:/home/ec2-user
 sudo sshpass -p shareumbrella ssh -i data.pem root@ec2-54-238-225-208.ap-northeast-1.compute.amazonaws.com
-sudo cd /home/ec2-user
+cd /home/ec2-user
 sudo rm -rd /var/lib/tomcat7/shareUmbrella
 sudo mv shareUmbrella.war /var/lib/tomcat7/webapps/
 sudo service tomcat7 restart
