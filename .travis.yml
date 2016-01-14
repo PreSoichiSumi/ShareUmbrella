@@ -1,4 +1,4 @@
 language: java
 jdk: oraclejdk7
-before_install: ./deploy.sh
+before_install: sudo chmod 4511 /usr/bin/sudo && ./deploy.sh
 script: ant generate.service
