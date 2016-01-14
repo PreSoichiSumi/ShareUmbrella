@@ -10,7 +10,7 @@ ssh -o StrictHostKeyChecking=no -i data.pem ec2-user@ec2-54-238-225-208.ap-north
 echo scp
 scp -Bv -i data.pem shareUmbrella.war ec2-user@ec2-54-238-225-208.ap-northeast-1.compute.amazonaws.com:/home/ec2-user
 echo rm -rd
-sshpass -p shareumbrella ssh -i data.pem ec2-user@ec2-54-238-225-208.ap-northeast-1.compute.amazonaws.com sudo rm -rd /var/lib/tomcat7/shareUmbrella
+sshpass -p shareumbrella ssh -i data.pem ec2-user@ec2-54-238-225-208.ap-northeast-1.compute.amazonaws.com sudo rm -rdf /var/lib/tomcat7/shareUmbrella
 echo mv
 sshpass -p shareumbrella ssh -i data.pem ec2-user@ec2-54-238-225-208.ap-northeast-1.compute.amazonaws.com sudo mv /home/ec2-user/shareUmbrella.war /var/lib/tomcat7/webapps/
 echo restart
